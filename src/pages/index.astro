@@ -6,6 +6,7 @@ import Skills from "./skills.astro";
 import Qualifications from "./qualifications.astro";
 import Projects from "./projects.astro";
 import Contact from "./contact.astro";
+import Hero from "./hero.astro";
 import "../styles/global.css";
 ---
 
@@ -16,9 +17,8 @@ import "../styles/global.css";
   </head>
   <body class="bg-gray-50 text-gray-900">
     <Header />
-    <main class="container mx-auto p-6">
-      <slot />
-      <!-- ページごとの内容がここに入る -->
+    <main class="container mx-auto">
+      <Hero />
       <About />
       <Skills />
       <Qualifications />
