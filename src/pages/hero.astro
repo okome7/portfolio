@@ -21,17 +21,39 @@
   </div>
 
   <!-- 右側：パソコン画像 -->
-  <div class="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
+  <div class="flex-1 flex justify-center md:justify-end relative mt-10 md:mt-0">
+    <!-- パソコン画像 -->
     <img
       src="/laptop.png"
       alt="Laptop"
-      class="w-80 md:w-[400px] animate-fadeIn delay-200"
+      class="w-80 md:w-[400px] animate-fadeIn delay-200 relative z-10"
+    />
+
+    <!-- JavaScript アイコン -->
+    <img
+      src="/js.png"
+      alt="JavaScript"
+      class="absolute -top-8 -left-1 w-12 h-12 animate-float"
+    />
+
+    <!-- CSS アイコン -->
+    <img
+      src="/css.png"
+      alt="CSS"
+      class="absolute top-1/2 -right-16 w-12 h-12 animate-float animation-delay-200"
+    />
+
+    <!-- Vue.js アイコン -->
+    <img
+      src="/vue.png"
+      alt="Vue.js"
+      class="absolute -bottom-8 left-1/2 w-12 h-12 animate-float animation-delay-400"
     />
   </div>
 
   <!-- 背景丸デコレーション -->
   <div
-    class="absolute -top-16 -left-20 w-64 h-64 bg-gradient-to-br from-[#FDE8D0] to-[#F4A259] rounded-full opacity-30 pointer-events-none animate-float"
+    class="absolute -top-16 -left-20 w-64 h-64 bg-linear-to-br from-[#FDE8D0] to-[#F4A259] rounded-full opacity-30 pointer-events-none animate-float"
   >
   </div>
   <div
