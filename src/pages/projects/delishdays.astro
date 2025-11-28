@@ -1,1 +1,131 @@
-a
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="DelishDays - App Description">
+  <main class="px-4 md:px-8 py-16 max-w-5xl mx-auto">
+    <!-- Hero -->
+    <div class="mb-12 text-center">
+      <h1 class="text-4xl font-bold mb-2">🍴 DelishDays</h1>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">
+        作った料理と外食を分けて記録できるライフログアプリ。 Cook / Eat
+        の切り替えやカテゴリ分類、写真・コメント・日付を記録できます。
+      </p>
+    </div>
+
+    <!-- Features Cards -->
+    <h2 class="text-2xl font-semibold mb-6">🌟 主な機能・画面構成</h2>
+    <div class="grid gap-6 md:grid-cols-2 mb-12">
+      <!-- ホーム画面 -->
+      <div
+        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
+      >
+        <img
+          src="/screenshots/delishdays-home.png"
+          alt="ホーム画面"
+          class="w-full h-auto object-contain"
+        />
+        <h3 class="font-bold mb-2">🏠 ホーム画面</h3>
+        <ul
+          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
+        >
+          <li>Cook / Eat タブ切替</li>
+          <li>カテゴリボタン（6種類）</li>
+          <li>投稿一覧（写真・タイトル・日付）</li>
+          <li>キーワード検索</li>
+        </ul>
+      </div>
+
+      <!-- 投稿詳細画面 -->
+      <div
+        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
+      >
+        <img
+          src="/screenshots/delishdays-calendar.png"
+          alt="投稿詳細画面"
+          class="w-full h-auto object-contain"
+        />
+        <h3 class="font-bold mb-2">2️⃣ 投稿詳細画面</h3>
+        <ul
+          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
+        >
+          <li>複数写真スライド</li>
+          <li>店名 / 作った場所</li>
+          <li>日付・コメント・カテゴリ</li>
+          <li>編集 / 削除ボタン</li>
+        </ul>
+      </div>
+
+      <!-- 投稿追加画面 -->
+      <div
+        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
+      >
+        <img
+          src="/screenshots/delishdays-add.png"
+          alt="投稿追加画面"
+          class="w-full h-auto object-contain"
+        />
+        <h3 class="font-bold mb-2">3️⃣ 投稿追加画面</h3>
+        <ul
+          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
+        >
+          <li>日付自動入力（変更可）</li>
+          <li>タイトル / メニュー名</li>
+          <li>カテゴリ選択（6つ）</li>
+          <li>写真追加（1枚以上）</li>
+          <li>コメント・メモ</li>
+          <li>投稿ボタンで Cook / Eat に登録</li>
+        </ul>
+      </div>
+
+      <!-- カレンダー画面 -->
+      <div
+        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
+      >
+        <img
+          src="/screenshots/delishdays-favorites.png"
+          alt="カレンダー画面"
+          class="w-full h-auto object-contain"
+        />
+        <h3 class="font-bold mb-2">4️⃣ カレンダー画面</h3>
+        <ul
+          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
+        >
+          <li>1ヶ月の食事記録を日別に可視化</li>
+          <li>日付クリックでその日の投稿一覧表示</li>
+        </ul>
+      </div>
+
+      <!-- 設定画面 -->
+      <div
+        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
+      >
+        <img
+          src="/screenshots/delishdays-settings.png"
+          alt="設定画面"
+          class="w-full h-auto object-contain"
+        />
+        <h3 class="font-bold mb-2">5️⃣ 設定画面</h3>
+        <ul
+          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
+        >
+          <li>アカウント表示 / ログアウト</li>
+          <li>通知 ON/OFF</li>
+          <li>テーマカラー変更（薄ピンク / ベージュ / モノトーン）</li>
+          <li>アプリ情報 / アカウント削除</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- App Link -->
+    <div class="text-center">
+      <a
+        href="https://delishdays.netlify.app/?tab=cook"
+        target="_blank"
+        class="inline-block bg-pink-400 hover:bg-pink-500 text-white px-6 py-3 rounded-full shadow-lg transition"
+      >
+        アプリを開く
+      </a>
+    </div>
+  </main>
+</BaseLayout>
