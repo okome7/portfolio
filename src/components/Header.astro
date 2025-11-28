@@ -1,15 +1,164 @@
-<header class="bg-white shadow border-b border-gray-200">
+<header
+  class="bg-white shadow border-b border-gray-200 fixed top-0 left-0 w-full z-50"
+>
   <div class="container mx-auto p-4 flex justify-between items-center">
     <h1 class="text-xl font-bold">Portfolio</h1>
-    <nav>
-      <a href="/" class="mr-4 hover:text-blue-500">Home</a>
-      <a href="/about" class="mr-4 hover:text-blue-500">About Me</a>
-      <a href="/skills" class="mr-4 hover:text-blue-500">Skills</a>
-      <a href="/projects" class="mr-4 hover:text-blue-500">Projects</a>
-      <a href="/qualifications" class="mr-4 hover:text-blue-500"
+
+    <!-- デスクトップナビ -->
+    <nav class="hidden md:flex space-x-4">
+      <a href="#home" class="hover:text-[#F4A259]">Home</a>
+      <a href="#about" class="hover:text-[#F4A259]">About Me</a>
+      <a href="#skills" class="hover:text-[#F4A259]">Skills</a>
+      <a href="#projects" class="hover:text-[#F4A259]">Projects</a>
+      <a href="#qualifications" class="hover:text-[#F4A259]">Qualifications</a>
+      <a href="#contact" class="hover:text-[#F4A259]">Contact</a>
+    </nav>
+
+    <!-- モバイル用ハンバーガー -->
+    <button id="menu-btn" class="md:hidden focus:outline-none z-50">
+      <svg
+        id="menu-icon"
+        class="w-6 h-6 text-gray-800"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- モバイルメニュー -->
+  <nav
+    id="mobile-menu"
+    class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 md:hidden z-40"
+  >
+    <div class="flex flex-col mt-15">
+      <a
+        href="#home"
+        class="block px-4 py-3 hover:bg-[#F4A259] hover:text-white transition-colors"
+        >Home</a
+      >
+      <a
+        href="#about"
+        class="block px-4 py-3 hover:bg-[#F4A259] hover:text-white transition-colors"
+        >About Me</a
+      >
+      <a
+        href="#skills"
+        class="block px-4 py-3 hover:bg-[#F4A259] hover:text-white transition-colors"
+        >Skills</a
+      >
+      <a
+        href="#projects"
+        class="block px-4 py-3 hover:bg-[#F4A259] hover:text-white transition-colors"
+        >Projects</a
+      >
+      <a
+        href="#qualifications"
+        class="block px-4 py-3 hover:bg-[#F4A259] hover:text-white transition-colors"
         >Qualifications</a
       >
-      <a href="/contact" class="hover:text-blue-500">Contact</a>
-    </nav>
-  </div>
+      <a
+        href="#contact"
+        class="block px-4 py-3 hover:bg-[#F4A259] hover:text-white transition-colors"
+        >Contact</a
+      >
+    </div>
+  </nav>
 </header>
+
+<!-- オーバーレイ -->
+<div id="overlay" class="fixed inset-0 bg-[black]/50 hidden z-30"></div>
+
+<script defer>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("overlay");
+  const header = document.querySelector("header");
+  let lastScroll = 0;
+
+  // ヘッダーのスクロールで表示/非表示
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 50) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
+    lastScroll = currentScroll;
+  });
+
+  // メニュー開閉
+  function toggleMenu() {
+    menu.classList.toggle("translate-x-full");
+    overlay.classList.toggle("hidden");
+  }
+
+  btn.addEventListener("click", (e) => {
+    toggleMenu();
+    e.stopPropagation();
+  });
+
+  // ページ内スクロールリンク（URLに#を付けない）
+  function scrollToSection(targetId) {
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  // デスクトップナビリンク
+  document.querySelectorAll("nav.hidden.md\\:flex a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+      scrollToSection(targetId);
+    });
+  });
+
+  // モバイルメニューリンク
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+      scrollToSection(targetId);
+
+      // メニュー閉じる
+      menu.classList.add("translate-x-full");
+      overlay.classList.add("hidden");
+    });
+  });
+
+  // オーバーレイクリックで閉じる
+  overlay.addEventListener("click", () => {
+    menu.classList.add("translate-x-full");
+    overlay.classList.add("hidden");
+  });
+
+  // メニュー外クリックで閉じる
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.add("translate-x-full");
+      overlay.classList.add("hidden");
+    }
+  });
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ヘッダー隠すアニメーション */
+  header {
+    transition: transform 0.3s ease;
+  }
+  header.hide {
+    transform: translateY(-100%);
+  }
+</style>
