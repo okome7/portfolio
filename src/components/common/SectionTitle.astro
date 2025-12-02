@@ -1,0 +1,13 @@
+---
+interface SectionTitleProps {
+  label: string;
+}
+
+const { label } = Astro.props as SectionTitleProps;
+---
+
+<div class="flex items-center gap-4 mb-6">
+  <div class="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+  <h2 class="text-2xl font-semibold whitespace-nowrap">{label}</h2>
+  <div class="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+</div>

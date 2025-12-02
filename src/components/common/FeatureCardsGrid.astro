@@ -1,0 +1,30 @@
+---
+interface Feature {
+  image: string;
+  title: string;
+  points: string[];
+}
+
+const props = Astro.props as { features: Feature[] };
+const { features } = props;
+---
+
+<div class="grid gap-6 md:grid-cols-2 mb-12">
+  {
+    features.map((item: Feature) => (
+      <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition">
+        <img
+          src={item.image}
+          alt={item.title}
+          class="w-full h-auto object-contain mb-3"
+        />
+        <h3 class="font-bold mb-2">{item.title}</h3>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1">
+          {item.points.map((p) => (
+            <li>{p}</li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>

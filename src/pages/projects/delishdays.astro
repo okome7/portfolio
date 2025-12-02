@@ -1,156 +1,83 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import AppIntro from "../../components/common/AppIntro.astro";
+import SectionTitle from "../../components/common/SectionTitle.astro";
+import FeatureCardsGrid from "../../components/common/FeatureCardsGrid.astro";
+import HighlightsGrid from "../../components/common/HighlightsGrid.astro";
+
+const delishFeatures = [
+  {
+    image: "/screenshots/delishdays-home.png",
+    title: "🏠 ホーム画面",
+    points: [
+      "Cook / Eat タブ切替",
+      "カテゴリボタン（6種類）",
+      "投稿一覧（写真・タイトル・日付）",
+      "キーワード検索",
+    ],
+  },
+  {
+    image: "/screenshots/delishdays-calendar.png",
+    title: "🗓️ カレンダー画面",
+    points: [
+      "1ヶ月の食事記録を日別に可視化",
+      "日付クリックでその日の投稿一覧表示",
+    ],
+  },
+  {
+    image: "/screenshots/delishdays-add.png",
+    title: "➕ 投稿追加画面",
+    points: [
+      "今日の日付が自動入力",
+      "タイトル / メニュー名入力",
+      "カテゴリ選択（6つ）",
+      "写真追加（1枚以上）",
+      "コメント・メモ",
+      "Cook / Eat に登録して保存",
+    ],
+  },
+  {
+    image: "/screenshots/delishdays-favorites.png",
+    title: "❤ お気に入り画面",
+    points: ["お気に入り投稿一覧の表示"],
+  },
+  {
+    image: "/screenshots/delishdays-settings.png",
+    title: "⚙️ 設定画面",
+    points: [
+      "ユーザー設定",
+      "通知 ON/OFF",
+      "テーマカラー変更",
+      "アプリ情報 / アカウント削除",
+    ],
+  },
+];
+
+const highlights = [
+  {
+    title:
+      "IndexedDB を用いてデータをブラウザ内に永続化し、オフラインでも使用可能",
+  },
+  {
+    title: "Vue3 + Piniaで状態管理を実装し、設定や投稿データの同期を効率化",
+  },
+  {
+    title: "Vue Router を使用したルート設定により、画面遷移をスムーズに実装",
+  },
+];
 ---
 
 <BaseLayout title="DelishDays - App Description">
   <main class="px-4 md:px-8 py-16 max-w-5xl mx-auto">
-    <!-- Hero -->
-    <div class="mb-12 text-center">
-      <h1 class="text-4xl font-bold mb-2">DelishDays</h1>
+    <AppIntro
+      title="DelishDays"
+      description={`作った料理と外食を分けて記録できるライフログアプリ。Cook / Eat の切り替えやカテゴリ分類、写真・コメント・日付を記録できます。`}
+    />
 
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        作った料理と外食を分けて記録できるライフログアプリ。 Cook / Eat
-        の切り替えやカテゴリ分類、写真・コメント・日付を記録できます。
-      </p>
-    </div>
-    <!-- Features Cards -->
-    <div class="flex items-center gap-4 mb-6">
-      <div class="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-      <h2 class="text-2xl font-semibold whitespace-nowrap">
-        画面構成・機能紹介
-      </h2>
-      <div class="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-    </div>
+    <SectionTitle label="画面構成・機能紹介" />
+    <FeatureCardsGrid features={delishFeatures} />
 
-    <div class="grid gap-6 md:grid-cols-2 mb-12">
-      <!-- ホーム画面 -->
-      <div
-        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <img
-          src="/screenshots/delishdays-home.png"
-          alt="ホーム画面"
-          class="w-full h-auto object-contain mb-3"
-        />
-        <h3 class="font-bold mb-2">🏠 ホーム画面</h3>
-        <ul
-          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
-        >
-          <li>Cook / Eat タブ切替</li>
-          <li>カテゴリボタン（6種類）</li>
-          <li>投稿一覧（写真・タイトル・日付）</li>
-          <li>キーワード検索</li>
-        </ul>
-      </div>
-
-      <!-- カレンダー画面 -->
-      <div
-        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <img
-          src="/screenshots/delishdays-calendar.png"
-          alt="カレンダー画面"
-          class="w-full h-auto object-contain mb-3"
-        />
-        <h3 class="font-bold mb-2">🗓️ カレンダー画面</h3>
-        <ul
-          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
-        >
-          <li>1ヶ月の食事記録を日別に可視化</li>
-          <li>日付クリックでその日の投稿一覧表示</li>
-        </ul>
-      </div>
-
-      <!-- 投稿追加画面 -->
-      <div
-        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <img
-          src="/screenshots/delishdays-add.png"
-          alt="投稿追加画面"
-          class="w-full h-auto object-contain mb-3"
-        />
-        <h3 class="font-bold mb-2">➕ 投稿追加画面</h3>
-        <ul
-          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
-        >
-          <li>今日の日付が自動入力</li>
-          <li>タイトル / メニュー名</li>
-          <li>カテゴリ選択（6つ）</li>
-          <li>写真追加（1枚以上）</li>
-          <li>コメント・メモ</li>
-          <li>投稿ボタンで Cook / Eat に登録</li>
-        </ul>
-      </div>
-
-      <!-- お気に入り画面 -->
-      <div
-        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <img
-          src="/screenshots/delishdays-favorites.png"
-          alt="お気に入り画面"
-          class="w-full h-auto object-contain mb-3"
-        />
-        <h3 class="font-bold mb-2">❤ お気に入り画面</h3>
-        <ul
-          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
-        >
-          <li>お気に入り投稿一覧表示</li>
-        </ul>
-      </div>
-
-      <!-- 設定画面 -->
-      <div
-        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
-      >
-        <img
-          src="/screenshots/delishdays-settings.png"
-          alt="設定画面"
-          class="w-full h-auto object-contain mb-3"
-        />
-        <h3 class="font-bold mb-2">⚙️ 設定画面</h3>
-        <ul
-          class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1"
-        >
-          <li>ユーザー設定</li>
-          <li>通知 ON/OFF</li>
-          <li>テーマカラー変更</li>
-          <li>アプリ情報 / アカウント削除</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 工夫した点 -->
-    <div class="flex items-center gap-4 mb-6 mt-12">
-      <div class="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-      <h2 class="text-2xl font-semibold whitespace-nowrap">工夫した点</h2>
-      <div class="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-    </div>
-
-    <div
-      class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
-    >
-      <ul
-        class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2"
-      >
-        <li>
-          IndexedDB を用いてデータをブラウザ内に永続化し、オフラインでも使用可能
-        </li>
-        <li>Vue3 + Piniaで状態管理を実装し、設定や投稿データの同期を効率化</li>
-        <li>Vue Router を使用したルート設定により、画面遷移をスムーズに実装</li>
-      </ul>
-    </div>
-
-    <!-- App Link -->
-    <div class="text-center">
-      <a
-        href="https://delishdays.netlify.app/?tab=cook"
-        target="_blank"
-        class="inline-block bg-pink-400 hover:bg-pink-500 text-white px-6 py-3 rounded-full shadow-lg transition"
-      >
-        アプリを開く
-      </a>
-    </div>
+    <SectionTitle label="工夫した点" />
+    <HighlightsGrid highlights={highlights} />
   </main>
 </BaseLayout>

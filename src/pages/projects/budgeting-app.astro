@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AppIntro from "../../components/common/AppIntro.astro";
+import SectionTitle from "../../components/common/SectionTitle.astro";
+import FeatureCardsGrid from "../../components/common/FeatureCardsGrid.astro";
+import HighlightsGrid from "../../components/common/HighlightsGrid.astro";
+
+const budgetingFeatures = [
+  {
+    image: "/screenshots/budgeting-home.png",
+    title: "🏠 Home Screen",
+    points: [
+      "一覧で支出・収入を確認",
+      "カテゴリごとに絞り込み可能",
+      "月別収支のサマリー表示",
+    ],
+  },
+  {
+    image: "/screenshots/budgeting-calendar.png",
+    title: "📅 Calendar Screen",
+    points: [
+      "月ごとの収支をカレンダー形式で表示",
+      "日付をクリックするとその日の投稿一覧を確認可能",
+      "収入・支出の管理が直感的にできる",
+    ],
+  },
+  {
+    image: "/screenshots/budgeting-chart.png",
+    title: "📊 Chart Screen",
+    points: [
+      "月ごとの収支を集計して表示",
+      "カテゴリ別のグラフで支出・収入を可視化",
+      "期間を選んで集計可能",
+    ],
+  },
+];
+
+// 工夫した点
+const highlights = [
+  {
+    title:
+      "ローカルストレージを用いてデータをブラウザ内に保存し、オフラインでも使用可能",
+  },
+  {
+    title: "JavaScriptで状態管理を自作し、入力データや設定の同期を効率化",
+  },
+  {
+    title:
+      "シンプルかつ見やすいUIを設計し、ユーザーが直感的に操作できるよう工夫",
+  },
+];
+---
+
+<BaseLayout title="Budgeting-app - 家計簿アプリ">
+  <main class="px-4 md:px-8 py-16 max-w-5xl mx-auto">
+    <AppIntro
+      title="Budgeting-app"
+      description={`支出・収入をカテゴリごとに分けて記録・管理できる家計簿アプリです。投稿の作成・編集・削除や月別集計、グラフ表示、テーマカラー変更などの設定を行えます。`}
+    />
+
+    <SectionTitle label="画面構成・機能紹介" />
+    <FeatureCardsGrid features={budgetingFeatures} />
+
+    <SectionTitle label="工夫した点" />
+    <HighlightsGrid highlights={highlights} />
+  </main>
+</BaseLayout>

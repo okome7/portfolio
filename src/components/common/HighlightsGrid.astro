@@ -1,0 +1,16 @@
+---
+interface Highlight {
+  title: string;
+}
+
+const props = Astro.props as { highlights: Highlight[] };
+const { highlights } = props;
+---
+
+<div
+  class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
+>
+  <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+    {highlights.map((item) => <li>{item.title}</li>)}
+  </ul>
+</div>

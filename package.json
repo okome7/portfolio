@@ -11,6 +11,7 @@
     "tw-build": "tailwindcss -i ./src/styles/global.css -o ./dist/output.css --watch"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "astro": "^5.16.0"
   },
   "devDependencies": {
