@@ -1,14 +1,14 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import AppIntro from "../../components/common/AppIntro.astro";
-import SectionTitle from "../../components/common/SectionTitle.astro";
-import FeatureCardsGrid from "../../components/common/FeatureCardsGrid.astro";
-import HighlightsGrid from "../../components/common/HighlightsGrid.astro";
+import AppIntro from "../../components/projects_common/AppIntro.astro";
+import SectionTitle from "../../components/projects_common/SectionTitle.astro";
+import FeatureCardsGrid from "../../components/projects_common/FeatureCardsGrid.astro";
+import HighlightsGrid from "../../components/projects_common/HighlightsGrid.astro";
 
 const delishFeatures = [
   {
     image: "/screenshots/delishdays-home.png",
-    title: "🏠 ホーム画面",
+    title: "ホーム画面",
     points: [
       "Cook / Eat タブ切替",
       "カテゴリボタン（6種類）",
@@ -18,7 +18,7 @@ const delishFeatures = [
   },
   {
     image: "/screenshots/delishdays-calendar.png",
-    title: "🗓️ カレンダー画面",
+    title: "カレンダー画面",
     points: [
       "1ヶ月の食事記録を日別に可視化",
       "日付クリックでその日の投稿一覧表示",
@@ -26,7 +26,7 @@ const delishFeatures = [
   },
   {
     image: "/screenshots/delishdays-add.png",
-    title: "➕ 投稿追加画面",
+    title: "投稿追加画面",
     points: [
       "今日の日付が自動入力",
       "タイトル / メニュー名入力",
@@ -38,12 +38,12 @@ const delishFeatures = [
   },
   {
     image: "/screenshots/delishdays-favorites.png",
-    title: "❤ お気に入り画面",
+    title: "お気に入り画面",
     points: ["お気に入り投稿一覧の表示"],
   },
   {
     image: "/screenshots/delishdays-settings.png",
-    title: "⚙️ 設定画面",
+    title: "設定画面",
     points: [
       "ユーザー設定",
       "通知 ON/OFF",

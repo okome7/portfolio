@@ -1,14 +1,14 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import AppIntro from "../../components/common/AppIntro.astro";
-import SectionTitle from "../../components/common/SectionTitle.astro";
-import FeatureCardsGrid from "../../components/common/FeatureCardsGrid.astro";
-import HighlightsGrid from "../../components/common/HighlightsGrid.astro";
+import AppIntro from "../../components/projects_common/AppIntro.astro";
+import SectionTitle from "../../components/projects_common/SectionTitle.astro";
+import FeatureCardsGrid from "../../components/projects_common/FeatureCardsGrid.astro";
+import HighlightsGrid from "../../components/projects_common/HighlightsGrid.astro";
 
 const budgetingFeatures = [
   {
     image: "/screenshots/budgeting-home.png",
-    title: "🏠 Home Screen",
+    title: "ホーム画面",
     points: [
       "一覧で支出・収入を確認",
       "カテゴリごとに絞り込み可能",
@@ -17,7 +17,7 @@ const budgetingFeatures = [
   },
   {
     image: "/screenshots/budgeting-calendar.png",
-    title: "📅 Calendar Screen",
+    title: "カレンダー画面",
     points: [
       "月ごとの収支をカレンダー形式で表示",
       "日付をクリックするとその日の投稿一覧を確認可能",
@@ -26,7 +26,7 @@ const budgetingFeatures = [
   },
   {
     image: "/screenshots/budgeting-chart.png",
-    title: "📊 Chart Screen",
+    title: "グラフ画面",
     points: [
       "月ごとの収支を集計して表示",
       "カテゴリ別のグラフで支出・収入を可視化",

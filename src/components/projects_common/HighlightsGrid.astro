@@ -9,6 +9,8 @@ const { highlights } = props;
 
 <div
   class="mb-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
+  data-aos="fade-up"
+  data-aos-duration="800"
 >
   <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
     {highlights.map((item) => <li>{item.title}</li>)}
