@@ -8,13 +8,57 @@
     <h1 class="text-xl font-bold">Portfolio</h1>
 
     <!-- デスクトップナビ -->
-    <nav class="hidden md:flex space-x-4">
-      <a href="#home" class="hover:text-[#F4A259]">Home</a>
-      <a href="#about" class="hover:text-[#F4A259]">About Me</a>
-      <a href="#skills" class="hover:text-[#F4A259]">Skills</a>
-      <a href="#projects" class="hover:text-[#F4A259]">Projects</a>
-      <a href="#qualifications" class="hover:text-[#F4A259]">Qualifications</a>
-      <a href="#contact" class="hover:text-[#F4A259]">Contact</a>
+    <nav class="hidden md:flex w-full pl-10">
+      <ul class="flex w-full">
+        <li class="flex-1 border-r last:border-none">
+          <a
+            href="#home"
+            class="block text-center py-2 hover:bg-[#F4A259] hover:text-white transition"
+          >
+            Home
+          </a>
+        </li>
+        <li class="flex-1 border-r last:border-none">
+          <a
+            href="#about"
+            class="block text-center py-2 hover:bg-[#F4A259] hover:text-white transition"
+          >
+            About Me
+          </a>
+        </li>
+        <li class="flex-1 border-r last:border-none">
+          <a
+            href="#skills"
+            class="block text-center py-2 hover:bg-[#F4A259] hover:text-white transition"
+          >
+            Skills
+          </a>
+        </li>
+        <li class="flex-1 border-r last:border-none">
+          <a
+            href="#projects"
+            class="block text-center py-2 hover:bg-[#F4A259] hover:text-white transition"
+          >
+            Projects
+          </a>
+        </li>
+        <li class="flex-1 border-r last:border-none">
+          <a
+            href="#qualifications"
+            class="block text-center py-2 hover:bg-[#F4A259] hover:text-white transition"
+          >
+            Qualifications
+          </a>
+        </li>
+        <li class="flex-1">
+          <a
+            href="#contact"
+            class="block text-center py-2 hover:bg-[#F4A259] hover:text-white transition"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
     </nav>
 
     <!-- モバイル用ハンバーガー -->
@@ -129,7 +173,7 @@
       const targetId = link.getAttribute("href").substring(1);
       scrollToSection(targetId);
     });
-  });         
+  });
 
   // モバイルメニューリンク
   menu.querySelectorAll("a").forEach((link) => {
