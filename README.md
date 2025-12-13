@@ -1,4 +1,4 @@
-# Okome's Portfolio
+# Portfolio
 
 ## 概要
 
