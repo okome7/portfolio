@@ -11,24 +11,59 @@ const { features } = props;
 
 <div class="grid gap-10 md:grid-cols-2 mb-12">
   {
-    features.map((item: Feature, index: number) => (
-      <div
-        class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
-        data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-        data-aos-duration="800"
-      >
-        <img
-          src={item.image}
-          alt={item.title}
-          class="w-full h-auto object-contain mb-3"
-        />
-        <h3 class="font-bold mb-2">{item.title}</h3>
-        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1">
-          {item.points.map((p) => (
-            <li>{p}</li>
-          ))}
-        </ul>
-      </div>
-    ))
+    features.map((item: Feature, index: number) => {
+      const modalId = `feature-modal-${index}`;
+
+      return (
+        <>
+          {/* カード */}
+          <div
+            class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition"
+            data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+            data-aos-duration="800"
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              class="w-full h-auto object-contain mb-3 cursor-pointer"
+              onclick={`const m=document.getElementById('${modalId}'); m?.classList.remove('hidden'); m?.classList.add('flex');`}
+            />
+
+            <h3 class="font-bold mb-2">{item.title}</h3>
+
+            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm space-y-1">
+              {item.points.map((p) => (
+                <li>{p}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* モーダル */}
+          <div
+            id={modalId}
+            class="hidden fixed inset-0 z-50 bg-black/70 items-center justify-center p-4"
+            onclick={`const m=document.getElementById('${modalId}'); m?.classList.add('hidden'); m?.classList.remove('flex');`}
+          >
+            <div
+              class="relative max-w-5xl w-full flex justify-center"
+              onclick="event.stopPropagation()"
+            >
+              <button
+                class="absolute top-2 right-2 bg-white text-gray-800 rounded-full w-10 h-10 shadow text-xl"
+                onclick={`event.stopPropagation(); const m=document.getElementById('${modalId}'); m?.classList.add('hidden'); m?.classList.remove('flex');`}
+              >
+                ×
+              </button>
+
+              <img
+                src={item.image}
+                alt={item.title}
+                class="max-w-full max-h-[90vh] rounded-lg object-contain bg-white"
+              />
+            </div>
+          </div>
+        </>
+      );
+    })
   }
 </div>
