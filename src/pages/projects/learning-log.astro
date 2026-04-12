@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AppIntro from "../../components/projects_common/AppIntro.astro";
+import SectionTitle from "../../components/projects_common/SectionTitle.astro";
+import FeatureCardsGrid from "../../components/projects_common/FeatureCardsGrid.astro";
+import HighlightsGrid from "../../components/projects_common/HighlightsGrid.astro";
+
+const learningLogFeatures = [
+  {
+    image: "/portfolio/screenshots/learning-log-home.png",
+    title: "ホーム画面",
+    points: [
+      "今日・今週・全体の学習件数を表示",
+      "タイトル・内容での検索機能",
+      "タグ選択・並び替え（新しい順・古い順）",
+      "ピン留めログと通常ログの一覧表示",
+      "学習内容カード表示（タイトル・日付・タグ・内容・写真）",
+    ],
+  },
+  {
+    image: "/portfolio/screenshots/learning-log-add-post.png",
+    title: "学習ログ追加画面",
+    points: [
+      "タイトル・日付・内容・タグ・写真を入力して学習ログを登録",
+      "入力ガイド（何をしたか・つまずいた点など）で記録しやすい設計",
+      "タグ付けによる学習内容の分類",
+      "モーダルUIで画面遷移せずにスムーズに投稿可能",
+      "必須項目のバリデーション対応（タイトル・日付・内容）",
+    ],
+  },
+  {
+    image: "/portfolio/screenshots/learning-log-detail.png",
+    title: "学習ログ詳細画面",
+    points: [
+      "ホーム画面で簡略表示された学習ログの詳細を確認可能",
+      "タイトル・日付・タグ・内容・写真を一覧で表示",
+      "学習内容を詳細に確認し、振り返りをしやすい設計",
+    ],
+  },
+  {
+    image: "/portfolio/screenshots/learning-log-tag-filter.png",
+    title: "タグ選択・フィルタ画面",
+    points: [
+      "タグを複数選択して学習ログを絞り込み可能",
+      "検索機能でタグを素早く見つけて選択",
+      "新しいタグをその場で追加できる機能を実装",
+      "選択中のタグ数を表示し、状態が分かりやすい設計",
+      "クリア・適用ボタンでフィルタ操作を直感的に実行",
+    ],
+  },
+  {
+    image: "/portfolio/screenshots/learning-log-search.png",
+    title: "検索・フィルタ画面",
+    points: [
+      "キーワードの部分一致検索により、入力中にリアルタイムで結果を表示",
+      "タグ・日付（カレンダー）・キーワードを組み合わせた柔軟な複合条件検索が可能",
+      "検索・フィルタ適用状態をUIに反映（クリアボタン表示）",
+      "該当するログのみを一覧表示し、目的の内容を素早く発見",
+    ],
+  },
+];
+
+const highlights = [
+  {
+    title:
+      "モーダルと状態管理を組み合わせ、ルーティングを使わずにスムーズな画面遷移を実現",
+  },
+  {
+    title:
+      "カスタムフックでデータ操作・表示ロジック・通知管理を分離し、再利用性と保守性を向上",
+  },
+  {
+    title:
+      "検索・タグ・日付フィルタを組み合わせた機能を実装し、学習履歴を効率的に振り返られるUIを実現",
+  },
+  {
+    title:
+      "トースト通知とUndo機能を実装し、誤って削除したログを元に戻せるようにしてUXを向上",
+  },
+];
+---
+
+<BaseLayout title="学習ログアプリ">
+  <main class="px-4 md:px-8 py-16 max-w-5xl mx-auto">
+    <AppIntro
+      title="学習ログアプリ"
+      description={`日々の学習内容を記録・可視化し、継続的な学習を支援するアプリ。`}
+    />
+
+    <SectionTitle label="画面構成・機能紹介" />
+    <FeatureCardsGrid features={learningLogFeatures} />
+
+    <SectionTitle label="工夫した点" />
+    <HighlightsGrid highlights={highlights} />
+  </main>
+</BaseLayout>
