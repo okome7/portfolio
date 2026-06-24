@@ -1,0 +1,57 @@
+---
+const technologies = ["Vue.js", "Ruby on Rails"];
+
+const responsibilities = [
+  "既存コードを理解しながら機能開発・改修を実施",
+  "API連携機能の実装",
+  "不具合調査や原因の切り分け",
+  "コードレビューを通じた品質を意識した開発",
+  "保守性やユーザー影響を考慮した実装",
+  "UIや仕様に関する改善提案",
+];
+---
+
+<section id="experience" class="py-16 px-8 bg-white dark:bg-gray-800">
+  <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+    Experience
+  </h2>
+
+  <div
+    class="w-full bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+    data-aos="fade-up"
+    data-aos-duration="800"
+  >
+    <div class="flex flex-col gap-5">
+      <div>
+        <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">
+          株式会社ingage 長期インターン（2026年2月〜現在）
+        </h3>
+      </div>
+
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        社内向け日報ツールや企業向けサービスの開発・改善に携わり、既存コードを読みながらの機能開発や不具合調査、API連携の実装を経験しました。
+      </p>
+
+      <div class="flex flex-wrap gap-2">
+        {
+          technologies.map((technology) => (
+            <span class="inline-block rounded-full bg-[#F4A259]/15 px-3 py-1 text-sm font-semibold text-[#B8641E] dark:bg-[#F4A259]/20 dark:text-[#FFD2A8]">
+              {technology}
+            </span>
+          ))
+        }
+      </div>
+
+      <ul class="grid gap-3 text-gray-700 dark:text-gray-300 md:grid-cols-2">
+        {
+          responsibilities.map((responsibility) => (
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 flex-none rounded-full bg-[#F4A259]" />
+              <span>{responsibility}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
