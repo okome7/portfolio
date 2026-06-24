@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AppIntro from "../../components/projects_common/AppIntro.astro";
+import SectionTitle from "../../components/projects_common/SectionTitle.astro";
+import FeatureCardsGrid from "../../components/projects_common/FeatureCardsGrid.astro";
+import HighlightsGrid from "../../components/projects_common/HighlightsGrid.astro";
+
+const oneStepNowFeatures = [
+  {
+    image: "/portfolio/screenshots/onestep-register.png",
+    title: "新規登録・ログイン",
+    points: [
+      "メールアドレスとパスワードによる認証機能を実装",
+      "メールアドレス重複チェックに対応",
+      "ログイン・ログアウト機能を実装",
+      "パスワード再設定機能を実装",
+      "認証完了後はホーム画面へ遷移",
+    ],
+  },
+  {
+    image: "/portfolio/screenshots/onestep-home.png",
+    title: "ホーム画面",
+    points: [
+      "今できることを1つだけ入力する設計",
+      "余計な情報を減らし行動開始に集中できるUI",
+      "入力後すぐに集中画面へ遷移",
+      "行動開始のハードルを下げることを重視",
+    ],
+  },
+  {
+    image: "/portfolio/screenshots/onestep-focus.png",
+    title: "集中タイマー画面",
+    points: [
+      "実行中のタスクを表示",
+      "タイマーを見ながら集中できる画面構成",
+      "余計な情報を排除したシンプルなUI",
+      "タスク完了後は完了画面へ遷移",
+    ],
+  },
+  {
+    image: "/portfolio/screenshots/onestep-feed.png",
+    title: "フィード画面",
+    points: [
+      "タスク完了後のみ閲覧可能な設計",
+      "達成内容の投稿を一覧表示",
+      "いいね・コメント機能を実装",
+      "閲覧時間を5分間に制限し、ダラダラ見続けてしまう脱線を防止",
+      "交流を行動後のごほうびとして設計",
+    ],
+  },
+  {
+    image: "/portfolio/screenshots/onestep-mypage.png",
+    title: "マイページ",
+    points: [
+      "達成履歴を一覧表示",
+      "レベルや達成数を確認可能",
+      "達成詳細ごとのいいね・コメントを表示",
+      "プロフィール情報を管理可能",
+    ],
+  },
+  {
+    image: "/portfolio/screenshots/onestep-settings.png",
+    title: "設定画面",
+    points: [
+      "表示名変更機能",
+      "アイコン選択・写真選択機能",
+      "ログアウト確認モーダル",
+      "アカウント削除確認・完了モーダル",
+    ],
+  },
+];
+
+const highlights = [
+  {
+    title:
+      "『行動前は情報を減らし、行動後に交流を解放する』という体験設計を重視して設計・実装",
+  },
+  {
+    title:
+      "ReactとRails APIを用いて認証機能を実装し、新規登録からパスワード再設定まで一連のフローを構築",
+  },
+  {
+    title: "Vitest・RSpec・Playwrightを導入し、単体テストからE2Eテストまで実施",
+  },
+  {
+    title:
+      "まずMVPとして体験の流れを完成させ、その後にDB設計やAPI実装を進める開発方針を採用",
+  },
+];
+---
+
+<BaseLayout title="OneStep Now">
+  <main class="px-4 md:px-8 py-16 max-w-5xl mx-auto">
+    <AppIntro
+      title="OneStep Now"
+      description={`「やる気はあるのに最初の一歩が出ない」人のための行動開始支援アプリです。やることを1つだけ決めて始めることに集中できるよう、行動前の情報を最小限にし、達成後にだけフィードで交流できる体験を設計しました。`}
+    />
+
+    <SectionTitle label="画面構成・機能紹介" />
+    <FeatureCardsGrid features={oneStepNowFeatures} />
+
+    <SectionTitle label="工夫した点" />
+    <HighlightsGrid highlights={highlights} />
+  </main>
+</BaseLayout>
