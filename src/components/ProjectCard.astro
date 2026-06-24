@@ -6,12 +6,22 @@ interface ProjectCardProps {
   image: string;
   link?: string;
   appLink?: string;
+  githubLink?: string;
   figmaLink?: string;
   status?: "building";
 }
 
-const { title, tech, description, image, link, appLink, figmaLink, status } =
-  Astro.props as ProjectCardProps;
+const {
+  title,
+  tech,
+  description,
+  image,
+  link,
+  appLink,
+  githubLink,
+  figmaLink,
+  status,
+} = Astro.props as ProjectCardProps;
 
 const isBuilding = status === "building";
 
@@ -67,6 +77,19 @@ const cardClass = isBuilding
               class="inline-block bg-[#6C63FF] text-white font-semibold py-2 px-5 rounded-lg hover:bg-[#9B94FF] transition-colors text-center"
             >
               アプリを開く
+            </a>
+          )
+        }
+
+        {
+          githubLink && (
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-[#24292f] text-white font-semibold py-2 px-5 rounded-lg hover:bg-[#3b424a] transition-colors text-center"
+            >
+              GitHubを見る
             </a>
           )
         }
